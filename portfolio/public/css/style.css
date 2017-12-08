@@ -1,0 +1,127 @@
+@import url(https://wli.nours312.com/api/?family=fontawesome);
+@import url('https://fonts.googleapis.com/css?family=Inder');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+/* font */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+  color: #00a3cc;
+}
+/* fin des font */
+html{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: 'Slabo 27px', serif;
+	background-color: #00a3cc;
+}
+body{
+	width: 60%;
+	margin: auto;
+	margin-top: 1%;
+	padding: 3%;
+	background-color: #fff;
+	border-radius: 1%;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Inder', sans-serif;
+	color: #00a3cc;
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+ul{
+	list-style-type: none;
+}
+#nav1{
+	margin-top: -5%;
+	border-radius: 10px;
+	background-color: #666666;
+}
+#nav2{
+	width: 40%;
+	margin: auto;
+	margin-bottom: 5%;
+	border-radius: 10px;
+	background-color: #666666;
+}
+#nav2 li:first-child{
+	margin-left: -15%;
+}
+nav ul{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+nav li{
+	text-align: center;
+	padding: 2%;
+	width: 15%;
+}
+footer{
+	margin-top: 20%;
+}
+footer ul{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.texteaccueil{
+	text-align: center;
+}
+.projet{
+	width: 60%;
+	margin: auto;
+	margin-top: 2%;
+	border: 1px solid black;
+	padding: 2%;
+}
+.projet p{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10%;
+}
+.gras{
+	font-weight: bold;
+}
+.projet img{
+	width: 25%;
+	display: inline-block;
+}
+.artquisuis{
+	width: 45%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: justify;
+	line-height: 150%;
+}
+#formationtext{
+	text-align: center;
+	line-height: 150%;
+}
+#competencetext{
+	width: 30%;
+	margin: auto;
+	line-height: 190%;
+}
+form{
+	width: 20%;
+	margin: auto;
+	text-align: center;
+}
+form input, textarea{
+	width: 100%;
+}
+.mailhome{
+	border: 1px solid #00a3cc;
+	margin-top: 1%;
+	padding: 1%;
+}
+#connecahce{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
