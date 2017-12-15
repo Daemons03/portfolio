@@ -11,9 +11,7 @@
 |
 */
 Route::get('/','AccueilController@index');
-Route::get('/quisuisje','AccueilController@quisuisje');
-Route::get('/formation','AccueilController@formation');
-Route::get('/competence','AccueilController@competence');
+Route::get('/apropos','AccueilController@quisuisje');
 Route::get('/projet','AccueilController@projet');
 Route::get('/contact','AccueilController@contact');
 Route::post('/gocontact','AccueilController@envoimail');
@@ -21,5 +19,7 @@ Route::get('/connexion','AccueilController@connection');
 Route::post('/goconnexion','AccueilController@goconnection');
 Route::get('/home','AccueilController@home');
 Route::get('/mail','AccueilController@mail');
+Route::get('/newprojet','AccueilController@newprojet');
+Route::post('/goprojet','AccueilController@goprojet');
 Route::get('/deconnection','AccueilController@deconnection');
 Route::get('/delete','AccueilController@delete');

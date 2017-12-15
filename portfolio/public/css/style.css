@@ -4,7 +4,6 @@
 /* font */
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
-  color: #00a3cc;
 }
 /* fin des font */
 html{
@@ -12,101 +11,82 @@ html{
 	margin: 0;
 	padding: 0;
 	font-family: 'Slabo 27px', serif;
-	background-color: #00a3cc;
+	color: #fff;
+	display: flex;
+	flex-wrap: nowrap;
 }
 body{
-	width: 60%;
-	margin: auto;
-	margin-top: 1%;
-	padding: 3%;
-	background-color: #fff;
-	border-radius: 1%;
+	width: 85%;
+	text-align: center;
+	margin-left: 15%;
+	padding: 2%;
+	background-image: url(/images/banner.jpg);
+	background-size: cover;
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Inder', sans-serif;
-	color: #00a3cc;
+	color: #000;
 	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
 }
 a{
-	text-decoration: none;
-	color: #000;
+	text-decoration: none !important;
+	color: #fff !important;
 }
 ul{
 	list-style-type: none;
 }
-#nav1{
-	margin-top: -5%;
-	border-radius: 10px;
-	background-color: #666666;
+.disparait{
+	display: none;
 }
-#nav2{
-	width: 40%;
-	margin: auto;
-	margin-bottom: 5%;
-	border-radius: 10px;
-	background-color: #666666;
+/*Menu */
+#navmini{
+	display: none;
 }
-#nav2 li:first-child{
-	margin-left: -15%;
+#menuhamburger{
+	font-size: 25px;
+	position: absolute;
+	top: 2%;
+	left: 2%;
 }
-nav ul{
+aside{
+	width: 15%;
+	font-size: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #0a0a0f;
+	color: #d1d1e0;
+	height: 1000px;
+	text-align: right;
+}
+aside p{
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-around;
 }
-nav li{
-	text-align: center;
-	padding: 2%;
-	width: 15%;
+#metierid{
+	font-size: 15px;
+
 }
-footer{
-	margin-top: 20%;
+aside a{
+	color: #d1d1e0;
 }
-footer ul{
+aside li{
+	margin-left: -10%;
+	margin-top: 2%;
+	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+	padding: 5% 5% 2% 2%;
+	background-color: #666;
 }
-.texteaccueil{
-	text-align: center;
+.deroul div{
+	display: none;
 }
-.projet{
-	width: 60%;
-	margin: auto;
-	margin-top: 2%;
-	border: 1px solid black;
-	padding: 2%;
-}
-.projet p{
-	display: inline-block;
-	vertical-align: top;
-	margin-left: 10%;
-}
-.gras{
-	font-weight: bold;
-}
-.projet img{
-	width: 25%;
-	display: inline-block;
-}
-.artquisuis{
-	width: 45%;
-	display: inline-block;
-	vertical-align: top;
-	text-align: justify;
-	line-height: 150%;
-}
-#formationtext{
-	text-align: center;
-	line-height: 150%;
-}
-#competencetext{
-	width: 30%;
-	margin: auto;
-	line-height: 190%;
-}
+.deroul:hover div{
+	display: block;
+} /* formulaire */
 form{
 	width: 20%;
 	margin: auto;
@@ -115,13 +95,148 @@ form{
 form input, textarea{
 	width: 100%;
 }
+/*Projet */
+.projet{
+	background-color: #666;
+	width: 50%;
+	margin: auto;
+	margin-top: 5%;
+	padding-bottom: 0.1%;
+	-moz-box-shadow: 10px 10px 5px 0px #000;
+	-webkit-box-shadow: 10px 10px 5px 0px #000;
+	-o-box-shadow: 10px 10px 5px 0px #000;
+	box-shadow: 10px 10px 5px 0px #000;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#000, Direction=134, Strength=5);
+}
+.projet img{
+	width: 100%;
+}
+.pagination{
+	margin-top: 5%;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.pagination li{
+	margin-left: 2%;
+}
+.pagination a{
+	color: black !important;
+} /* page a propos*/
+#presenapropo{
+	width: 30%;
+	margin: auto;
+	margin-top: 3%;
+	text-align: justify;
+}
+section#apropo{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	margin-top: 4%;
+}
+article#infoperso{
+	width: 50%;
+	text-align: left;
+}
+article#infoperso h2{
+	margin-bottom: 5%;
+}
+article#competence{
+	width: 50%;
+	padding-right: 2%;
+	padding-left: 2%;
+}
+.titrelangage{
+	margin-top: 5%;
+}
+/*Progresse bar */
+.progress{
+	background-color: #837579 !important;
+	margin-top: 2% !important;
+}
+.progress-bar{
+	background-color: #899199 !important;
+}
+
+
+
+/*Mail */
 .mailhome{
-	border: 1px solid #00a3cc;
+	text-align: left;
+	background-color: #666;
 	margin-top: 1%;
 	padding: 1%;
 }
-#connecahce{
+@media screen and (max-width: 1400px) {
+aside{
+	font-size: 15px;
+}
+
+@media screen and (max-width: 1150px) {
+aside{
+	font-size: 15px;
+}
+aside img{
+	width: 50%;
+	margin: auto;
+}
+aside p#hautnav{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+#metierid{
+	font-size: 10px;
+}
+#presenapropo{
+	width: 50%;
+	margin: auto;
+	margin-top: 3%;
+	text-align: justify;
+}
+form{
+	width: 50%;
+}
+}
+@media screen and (max-width: 1000px) {
+body{
+	width: 100%;
+	margin-left: 0%;
+}aside{
+display: none;
+}
+#navmini{
+	display: block;
+}
+#contenumini{
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 6%;
+	left: 2%;
+	background-color: #000;
+	text-align: left;
+	padding: 1%;
+	border-radius: 10%;
+}
+}
+@media screen and (max-width: 1000px) {
+section#apropo{
+	display: flex;
+	flex-direction: column;
+	margin-top: 4%;
+}
+article#infoperso{
+	width: 100%;
+	text-align: left;
+}
+article#infoperso h2{
+	margin-bottom: 5%;
+}
+article#competence{
+	width: 100%;
+	padding-right: 2%;
+	padding-left: 2%;
+}
+form{
+	width: 50%;
+}
 }

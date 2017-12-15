@@ -1,16 +1,14 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dagnière Maxime</title>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        @include('header')
+@extends('layout')
+@section('title', 'Mail')
+@section('content')
         <h2>Mails:</h2>
+        @if(Session::has('resultat')) 
+        <div style="text-align: center; color: green;">
+        {{Session()->get('resultat')}}
+        </div>
+        @endif
+        <span>Nombre d'email reçu: {{$nombre}}</span>
+            {{ $email->appends(['Vue' => 'Mails'])->links() }}
         @foreach($email as $key => $value)
         <article class="mailhome">
             <p><span class="fontawesome-envelope-alt"></span> {{ $value->mail }}</p>
@@ -18,11 +16,7 @@
             <p><span class="fontawesome-calendar"></span> {{ $value->created_at }}</p>
             <p><span class="gras">Sujet: </span>{{ $value->subjet }}</p>
             <p><span class="gras">Message: </span>{{ $value->content }}</p>
-            <button><a href="/delete?id={{$value->id }}">Delete</a></button>
+            <span  data-id="{{$value->id }}" class="fontawesome-trash supprart"></span>
         </article>
         @endforeach
-
-
-        @include('footer')
-    </body>
-</html>
+@endsection

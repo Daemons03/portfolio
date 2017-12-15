@@ -1,16 +1,21 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dagnière Maxime</title>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        @include('header')
-        <h2>Une question, un projet?</h2>
+       
+@extends('layout')
+@section('title', 'Connection')
+@section('content')
+      <h2>Une question, un projet?</h2>
+        @if ($errors->any())
+            <div style="text-align: center; color: red;">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @elseif(Session::has('envoimail')) 
+            <div style="text-align: center; color: #001a00;">
+                {{Session()->get('envoimail')}}
+            </div>
+        @endif
          {{ Form::open(['url' => '/gocontact']) }}
           <div>
             {{ Form::label('name', 'Name:') }}
@@ -30,8 +35,4 @@
         </div>
         <div>{{ Form::submit('Envoyer') }}</div>
     {{ Form::close() }}
-
-
-        @include('footer')
-    </body>
-</html>
+@endsection

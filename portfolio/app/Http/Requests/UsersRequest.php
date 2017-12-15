@@ -20,8 +20,8 @@ class UsersRequest extends FormRequest
     public function messages()
     {
         return [
-            'email.required' => 'Le mail l\'est pas renseigné !',
-            'email.email' => 'Le mail l\'est pas renseigné !',
+            'email.required' => 'Le mail n\'est pas renseigné !',
+            'email.email' => 'Le mail n\'est pas renseigné !',
             'password.required' => 'Le password n\'est pas renseigné !'
         ];
     }
