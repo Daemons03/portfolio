@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UsersRequest;
 use App\Http\Requests\EmailRequest;
 use App\Http\Requests\ProjetRequest;
+use App\Http\Requests\ModifRequest;
 use App\Users;
 use App\EmailContact;
 use App\Experience;
@@ -21,42 +22,7 @@ use App\Mail\Contact;
 use Session;
 
 
-class AccueilController extends Controller{
-
-   public function index(){
-    $projet = Project::orderBy('date_creation','desc')->paginate(1);
-    return view('accueil',compact('projet'));
-   }
-    public function quisuisje(){
-        $personal = Personal::get();
-      	$experience = Experience::orderBy('id','desc')->get();
-        $formation = formation::orderBy('id','desc')->get();
-        $skill = Skills::orderBy('pourcentage','desc')->get();
-        return view('apropos',compact('experience', 'personal', 'formation', 'skill'));
-   }
-    public function projet(){
-      $projet = Project::orderBy('date_creation','desc')->paginate(1);
-      $nombre = Project::count();
-    return view('projet',compact('projet', 'nombre'));
-   }
-    public function contact(){
-      	return view('contact');
-   }
-
-    public function envoimail(EmailRequest $request){
-       	$email = new EmailContact();
-       	$email->name = $request->name;
-       	$email->mail = $request->email;
-       	$email->subjet = $request->sujet;
-      	$email->content = $request->message;
-      	$email->save();
-      	$mail_to = 'm.dagniere@aformac-vichy.fr';
-      Mail::to($mail_to)
-      ->send(new Contact($request->except('_token')));
-      return redirect('contact')->with('envoimail', 'Le mail est bien envoyé');
-   }
-
-
+class AdminController extends Controller{
 
 //BACK-OFFICE
     public function connection(){
@@ -112,7 +78,22 @@ public function goprojet(ProjetRequest $request){
         return view('accueil');
      }
    }
-
+  public function modifinfo(){
+      if (Session('name')){  
+      $skill = Skills::get();    
+       return view('modifinfo', compact('skill'));
+      }else{
+        return view('accueil');
+     }
+   }
+     public function gomodifinfo(ModifRequest $request){
+      if (Session('name')){  
+           dd($request);
+       return view('modifinfo');
+      }else{
+        return view('accueil');
+     }
+   }
 
    public function deconnection(){
       if (Session('name')){

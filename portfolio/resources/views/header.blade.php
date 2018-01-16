@@ -1,21 +1,22 @@
 <aside class="animated bounceInDown">
 <nav id="nav1">
-	<p id="hautnav"><img src="/images/maxime.png"><span>Dagnière Maxime</span></p>
+	<p id="hautnav"><img src="/images/maxime.png"><span>DAGNIERE Maxime</span></p>
 	<p id="metierid">Développeur Web</p>
 	<ul>
-		<a href="/"><li><span class="fontawesome-home"></span>Accueil</li></a>
-		<a href="/apropos"><li><span class="fontawesome-user"></span>A propos</li></a>
-		<a href="/projet"><li><span class="fontawesome-picture"></span>Réalisations</li></a>
-		<a href="/contact"><li><span class="fontawesome-envelope"></span>Contact</li></a>
+		<a href="{{url('/')}}"><li><span class="fontawesome-home"></span>Accueil</li></a>
+		<a href="{{url('/apropos')}}"><li><span class="fontawesome-user"></span>A propos</li></a>
+		<a href="{{url('/projet')}}"><li><span class="fontawesome-picture"></span>Réalisations</li></a>
+		<a href="{{url('/contact')}}"><li><span class="fontawesome-envelope"></span>Contact</li></a>
 	</ul>
 		@if (Session('name'))
 			<ul class="deroul">
 			<li><span class="fontawesome-key"></span><span>Administration <span class="fontawesome-chevron-down"></span></span></li>
 				<div>
-				<a href="/home"><li><span class="fontawesome-h-sign"></span>Home</li></a>
-				<a href="/mail"><li><span class="fontawesome-folder-open-alt"></span>Mail</li></a>
-				<a href="/newprojet"><li><span class="fontawesome-download-alt"></span>Projet</li></a>
-				<a href="/deconnection"><li><span class="fontawesome-off"></span>Déconnection</li></a>
+				<a href="{{url('/home')}}"><li><span class="fontawesome-h-sign"></span>Home</li></a>
+				<a href="{{url('/mail')}}"><li><span class="fontawesome-folder-open-alt"></span>Mail</li></a>
+				<a href="{{url('/newprojet')}}"><li><span class="fontawesome-download-alt"></span>Projet</li></a>
+				<a href="{{url('/modifinfo')}}"><li><span class="fontawesome-download-alt"></span>Paramètre</li></a>
+				<a href="{{url('/deconnection')}}"><li><span class="fontawesome-off"></span>Déconnection</li></a>
 				</div>
 			</ul>
 		@endif

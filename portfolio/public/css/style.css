@@ -154,8 +154,17 @@ article#competence{
 	background-color: #837579 !important;
 	margin-top: 2% !important;
 }
-.progress-bar{
-	background-color: #899199 !important;
+.progress-bar.rougebc{
+	background-color: #cc0000 !important;
+}
+.progress-bar.orangebc{
+	background-color: #cc7a00 !important;
+}
+.progress-bar.jaunebc{
+	background-color: #e6e600 !important;
+}
+.progress-bar.vertbc{
+	background-color: #00b359 !important;
 }
 
 

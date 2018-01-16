@@ -1,7 +1,7 @@
 @extends('layout')
 @section('title', 'Qui suis-je')
 @section('content')
-        <h1>Dagnière Maxime</h1>
+        <h1>DAGNIERE Maxime</h1>
         <p id="presenapropo">Je me présente Maxime Dagnière. Je suis actuellement en formation développeur Web. Ayant toujours été attiré par l'informatique, le jour ou j'ai du choisir un secteur de reconverson c'est tout naturelement que j'ai choisi la voie de développeur web.</p>
         <section id="apropo">
         	<article id="infoperso">
@@ -16,28 +16,21 @@
         	</article>
         	<article id="competence">
         		<h2>Compétences</h2>
-        		<h3 class="titrelangage">Langages Client/Serveurs</h3>
         		 @foreach($skill as $key => $value)
-	       			<div class="progress">
-				 	 	<div class="progress-bar" role="progressbar" style="width: {{$value->pourcentage}}%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{$value->name}}</div>
-					</div>
+                    <label>{{$value->name}}</label>
+                    <div class="progress">
+                        @if($value->pourcentage <= 25)
+                            <div class="progress-bar rougebc" role="progressbar" style="width: {{$value->pourcentage}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        @elseif(($value->pourcentage > 25) && ($value->pourcentage <= 50))
+                            <div class="progress-bar orangebc" role="progressbar" style="width: {{$value->pourcentage}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        @elseif(($value->pourcentage > 50) && ($value->pourcentage <= 75))
+                            <div class="progress-bar jaunebc" role="progressbar" style="width: {{$value->pourcentage}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        @elseif($value->pourcentage > 75)
+                            <div class="progress-bar vertbc" role="progressbar" style="width: {{$value->pourcentage}}%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        @endif
+                    </div>
+
         		@endforeach
-				<h3 class="titrelangage">Framework, Librairies Client/Serveurs</h3>
-				<div class="progress">
-			 	 	<div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">JQuery</div>
-				</div>
-				<div class="progress">
-			 	 	<div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Ionic</div>
-				</div>
-				<div class="progress">
-			 	 	<div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Angular</div>
-				</div>
-				<div class="progress">
-			 	 	<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Bootstrap</div>
-				</div>
-				<div class="progress">
-			 	 	<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Laravel</div>
-				</div>
         	</article>
         </section>
 @endsection
